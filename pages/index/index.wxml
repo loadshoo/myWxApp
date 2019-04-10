@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <conten-cp></conten-cp>
+</view>

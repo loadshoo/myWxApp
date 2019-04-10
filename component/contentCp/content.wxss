@@ -1,0 +1,40 @@
+/* component/contentCp/content.wxss */
+.content{
+  background-color: #fff;
+  font-size: 30rpx;
+  color: rgb(121, 120, 120);
+  display: flex;
+  flex-flow: column wrap; 
+  padding: 20rpx;
+  margin: 20rpx;
+}
+.content-header{
+  display: flex;
+  font-size: 35rpx;
+  color: #000;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10rpx;
+}
+.content-con{
+  display: flex;
+  flex-flow: column wrap;
+}
+.content-txt{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20rpx 10rpx;
+}
+.content-inf{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10rpx;
+}
+.content-inf text{
+  margin-right: 80rpx;
+}

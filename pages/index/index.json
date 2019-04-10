@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "conten-cp":"/component/contentCp/content"
+  }
+}
