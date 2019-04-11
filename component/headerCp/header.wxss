@@ -1,5 +1,5 @@
 /* component/headerCp/header.wxss */
-@import "/status/css/icon.wxss";
+@import "/static/css/icon.wxss";
 .header{
     position: fixed;
     display: flex;

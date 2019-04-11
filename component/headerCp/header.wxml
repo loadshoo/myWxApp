@@ -5,5 +5,5 @@
         <view class='{{changeColor?"actived":""}}' bindtap='selectCont'>list</view>
         <view class='{{changeColor?"":"actived"}}' bindtap='selectInfo'>help</view>
     </view>
-    <view class='header-right iconfont icon-sousuo'></view>
+    <view bindtap="searchIcon" class='header-right iconfont icon-sousuo'></view>
 </view>

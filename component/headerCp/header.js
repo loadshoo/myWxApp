@@ -30,6 +30,11 @@ Component({
                 changeColor: false,
             });
         },
+      searchIcon(){
+        wx.navigateTo({
+          url: '/pages/searchBar/searchBar',
+        })
+      },
     },
     
 })
