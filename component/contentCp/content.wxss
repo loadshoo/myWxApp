@@ -1,5 +1,5 @@
 /* component/contentCp/content.wxss */
-@import "/status/css/icon.wxss";
+@import "/static/css/icon.wxss";
 
 .content{
   background-color: #fff;
@@ -42,4 +42,11 @@
 }
 .content-inf text{
   margin-right: 80rpx;
+}
+.content-inf button{
+  margin-left: -10rpx;
+  background-color:#fff;
+}
+.content-inf button::after{
+  border: none;
 }

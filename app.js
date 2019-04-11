@@ -1,5 +1,5 @@
 //app.js
-import {obj} from "./status/json/content.js"
+import { obj } from "./static/json/content.js"
 
 console.log(obj);
 App({

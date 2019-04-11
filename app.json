@@ -25,20 +25,20 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath":"/status/images/index.png",
-                "selectedIconPath":"/status/images/index-blue.png"
+                "iconPath":"/static/images/index.png",
+                "selectedIconPath":"/static/images/index-blue.png"
             },
             {
                 "pagePath": "pages/logs/logs",
                 "text": "日志",
-                "iconPath": "/status/images/logs.png",
-                "selectedIconPath": "/status/images/logs-blue.png"
+                "iconPath": "/static/images/logs.png",
+                "selectedIconPath": "/static/images/logs-blue.png"
             },
             {
                 "pagePath": "pages/meInfo/meInfo",
                 "text": "个人",
-                "iconPath": "/status/images/mian.png",
-                "selectedIconPath": "/status/images/mian-blue.png"
+                "iconPath": "/static/images/mian.png",
+                "selectedIconPath": "/static/images/mian-blue.png"
             }
         ]
     },

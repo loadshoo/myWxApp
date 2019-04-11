@@ -12,7 +12,7 @@
         <view class='content-inf'>
             <text>{{time}}</text>
             <text class='iconfont icon-pinglun'></text>
-            <text class='iconfont icon-zhuanfa'></text>
+            <button open-type="share" class='iconfont icon-zhuanfa'></button>
         </view>
     </view>
 </view>
