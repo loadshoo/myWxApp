@@ -1,17 +1,18 @@
 <!--component/contentCp/content.wxml-->
+
 <view class='content' wx:for="{{15}}" wx:key="key">
-  <view class='content-header'>
-    <icon></icon>
-    <text>右对齐</text>
-  </view>
-  <view class='content-con'>
-    <view class='content-txt'>
-      <text>每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。两端对齐，项目之间的间隔都相等。</text>
+    <view class='content-header'>
+        <text class="iconfont icon-shu"></text>
+        <text>右对齐</text>
     </view>
-    <view class='content-inf'>
-      <text>居左</text>
-      <text>居中</text>
-      <text>居右</text>
+    <view class='content-con'>
+        <view class='content-txt'>
+            <text>每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。两端对齐，项目之间的间隔都相等。</text>
+        </view>
+        <view class='content-inf'>
+            <text>{{time}}</text>
+            <text class='iconfont icon-pinglun'></text>
+            <text class='iconfont icon-zhuanfa'></text>
+        </view>
     </view>
-  </view>
 </view>

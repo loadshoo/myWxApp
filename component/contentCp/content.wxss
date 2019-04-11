@@ -1,8 +1,10 @@
 /* component/contentCp/content.wxss */
+@import "/status/css/icon.wxss";
+
 .content{
   background-color: #fff;
   font-size: 30rpx;
-  color: rgb(121, 120, 120);
+  color: #525151;
   display: flex;
   flex-flow: column wrap; 
   padding: 20rpx;
@@ -16,6 +18,9 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0 10rpx;
+}
+.content-header text {
+    margin-right: 20rpx;
 }
 .content-con{
   display: flex;

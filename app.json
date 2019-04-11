@@ -1,33 +1,47 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/meInfo/meInfo",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#000000",
-    "selectedColor": "blue",
-    "backgroundColor": "#fafafa",
-    "position": "bottom",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text":"首页"
-      },{
-        "pagePath":"pages/logs/logs",
-        "text":"日志"
-      },
-      {
-        "pagePath": "pages/meInfo/meInfo",
-        "text": "个人"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/meInfo/meInfo",
+        "pages/info/info",
+        
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "myWxApp",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#fff",
+        "onReachBottomDistance":50
+    },
+    "tabBar": {
+        "color": "#000000",
+        "selectedColor": "#1296db",
+        "backgroundColor": "#fafafa",
+        "position": "bottom",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath":"/status/images/index.png",
+                "selectedIconPath":"/status/images/index-blue.png"
+            },
+            {
+                "pagePath": "pages/logs/logs",
+                "text": "日志",
+                "iconPath": "/status/images/logs.png",
+                "selectedIconPath": "/status/images/logs-blue.png"
+            },
+            {
+                "pagePath": "pages/meInfo/meInfo",
+                "text": "个人",
+                "iconPath": "/status/images/mian.png",
+                "selectedIconPath": "/status/images/mian-blue.png"
+            }
+        ]
+    },
+    
+    "sitemapLocation": "sitemap.json"
 }

@@ -1,4 +1,13 @@
 <!--index.wxml-->
+
+<!-- 头部导航栏组件 -->
+
+<header-cp bind:myevent="onMyEvent"></header-cp>
 <view class="container">
-  <conten-cp></conten-cp>
+    <!-- 内容组件 -->
+    <conten-cp wx:if="{{content}}" time="2019/4/10"></conten-cp>
 </view>
+
+<block>
+    <help-cp wx:if="{{help}}"></help-cp>
+</block>
