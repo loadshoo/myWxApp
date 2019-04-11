@@ -1,0 +1,9 @@
+<!--component/headerCp/header.wxml-->
+<view class='header'>
+    <view class='header-left iconfont icon-caidan'></view>
+    <view class='header-center'>
+        <view class='{{changeColor?"actived":""}}' bindtap='selectCont'>list</view>
+        <view class='{{changeColor?"":"actived"}}' bindtap='selectInfo'>help</view>
+    </view>
+    <view class='header-right iconfont icon-sousuo'></view>
+</view>
