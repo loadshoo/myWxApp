@@ -1,1 +1,34 @@
 /* pages/meInfo/meInfo.wxss */
+page{
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+}
+.conform{
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logout{
+    background-color: #ccc;
+}
+image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius:50%; 
+    display: flex;
+    margin: 180rpx 0 30rpx;
+}
+button{
+    width: 300rpx;
+    background-color: #1296db;
+    border-radius:  80rpx;
+    height: 80rpx;
+    color: #fff;
+    line-height: 80rpx;
+    margin: 30rpx 0;
+}
