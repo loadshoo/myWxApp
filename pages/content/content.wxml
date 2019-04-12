@@ -1,0 +1,14 @@
+<!--pages/content/content.wxml-->
+<view class='content'>
+    <view class='content-header'>{{datas.txt[0].header}}</view>
+    <view class='content-info'>
+        <view class='little-info iconfont icon-shijian'>{{datas.txt[0].upTime}}</view>
+        <view class='little-info iconfont icon-tubiao-'>javascript</view>
+    </view>
+    <view class='content-cont'>
+        <text>{{datas.txt[0].cont}}</text>
+    </view>
+    <view class='content-talkabout'>
+        <view>这里是评论:</view>
+    </view>
+</view>
