@@ -3,7 +3,7 @@
         "pages/index/index",
         "pages/meInfo/meInfo",
         "pages/info/info",
-        
+        "pages/content/content",
         "pages/logs/logs"
     ],
     "window": {

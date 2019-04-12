@@ -1,5 +1,6 @@
 {
 	"description": "项目配置文件。",
+	"cloudfunctionRoot": "cloud-functions/",
 	"packOptions": {
 		"ignore": []
 	},
@@ -11,12 +12,13 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
+	"libVersion": "2.6.5",
 	"appid": "wx5005c47f35dd6f14",
 	"projectname": "myWxApp",
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,

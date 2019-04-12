@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "conten-cp":"/component/contentCp/content",
+    "conten-cp":"/component/contentCp/contentCp",
     "header-cp":"/component/headerCp/header",
     "help-cp":"/component/helpCp/help"
   }

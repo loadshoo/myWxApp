@@ -6,7 +6,8 @@ Page({
     data: {
         content: true,
         help: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        datas:""
     },
     onMyEvent(e) {
         this.setData({
@@ -27,5 +28,20 @@ Page({
         path: ""
       }
     }
+  },
+  onLoad(){
+      //获取云端数据
+      wx.cloud.init();
+      const db = wx.cloud.database();
+      const that = this;
+      db.collection("content").doc('5cb075ad8852e71926067b2c').get({
+          success(msg) {
+              console.log(msg.data.content)
+              that.setData({
+                  datas:msg.data.content
+              })
+          },
+          fail: console.error
+      })
   }
 })
