@@ -1,8 +1,15 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 10rpx 40rpx;
+page {
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
 }
+
+.log-list {
+    display: flex;
+    flex-direction: column;
+    padding: 10rpx 40rpx;
+}
+
 .log-item {
-  margin: 10rpx;
+    margin: 10rpx;
 }
