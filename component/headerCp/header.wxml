@@ -1,9 +1,15 @@
 <!--component/headerCp/header.wxml-->
 <view class='header'>
-    <view class='header-left iconfont icon-caidan'></view>
+    <view bindtap='remotoChange' class='header-left iconfont icon-caidan {{remoto==true?"remoto actived":""}}'></view>
     <view class='header-center'>
-        <view class='{{changeColor?"actived":""}}' bindtap='selectCont'>list</view>
-        <view class='{{changeColor?"":"actived"}}' bindtap='selectInfo'>help</view>
+        <view class='{{changeColor?"actived":""}}' bindtap='selectCont'>全部</view>
+        <view class='{{changeColor?"":"actived"}}' bindtap='selectInfo'>推荐</view>
     </view>
     <view bindtap="searchIcon" class='header-right iconfont icon-sousuo'></view>
+</view>
+<view hidden='{{taber}}' class='{{taber==false?"taber":""}}'>
+    <view class='iconfont icon-shoucang'></view>
+    <view class='iconfont icon-bangzhu'></view>
+    <view class='iconfont icon-iconset0103'></view>
+    <view class='iconfont icon-shezhi'></view>
 </view>

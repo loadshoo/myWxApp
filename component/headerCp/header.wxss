@@ -1,37 +1,91 @@
 /* component/headerCp/header.wxss */
 @import "/static/css/icon.wxss";
-.header{
+
+.header {
     position: fixed;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content:  space-between;
+    justify-content: space-between;
     width: 100%;
     top: 0;
     font-size: 30rpx;
     z-index: 999;
     background-color: #fff;
-    padding: 10rpx 0;
+    padding: 0;
 }
 
-.header-left{
+.header-left {
     margin-left: 20rpx;
+    transition-duration: 1s;
 }
-.header-center{
+
+.header-center {
     display: flex;
     flex-flow: row wrap;
     width: 20%;
     justify-content: space-between;
 }
-.actived{
+
+.actived {
     color: #1296db;
 }
-.header-right{
+
+.header-right {
     margin-right: 20rpx;
 }
-.icon-caidan{
+
+.icon-caidan {
     font-size: 50rpx;
 }
-.icon-sousuo{
+
+.icon-sousuo {
     font-size: 50rpx;
+}
+
+.remoto {
+    transform: rotate(90deg);
+    transition-duration: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.2;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    60% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.taber {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 10rpx;
+    background-color: #fff;
+    animation: fadeIn 1s;
+    padding: 0 10rpx;
+    position: fixed;
+    top: 70rpx;
+}
+
+.iconfont {
+    font-size: 50rpx;
+    margin-bottom: 10rpx;
 }

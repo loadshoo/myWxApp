@@ -11,7 +11,9 @@ Component({
      * 组件的初始数据
      */
     data: {
-        changeColor:true,
+        changeColor: true,
+        remoto: false,
+        taber:true,
     },
 
     /**
@@ -19,22 +21,43 @@ Component({
      */
     methods: {
         selectCont() {
-            this.triggerEvent('myevent',{content:true,help:false});
+            this.triggerEvent('myevent', {
+                content: true,
+                help: false
+            });
             this.setData({
-                changeColor:true,
+                changeColor: true,
             });
         },
         selectInfo() {
-            this.triggerEvent('myevent', { content: false, help: true });
+            this.triggerEvent('myevent', {
+                content: false,
+                help: true
+            });
             this.setData({
                 changeColor: false,
             });
         },
-      searchIcon(){
-        wx.navigateTo({
-          url: '/pages/searchBar/searchBar',
-        })
-      },
+        searchIcon() {
+            wx.navigateTo({
+                url: '/pages/searchBar/searchBar',
+            })
+        },
+        remotoChange(){
+            if(this.data.remoto==false||this.data.taber==true){
+                this.setData({
+                    remoto: true,
+                    taber:false
+                })
+            }
+            else if (this.data.remoto == true || this.data.taber == false){
+                this.setData({
+                    remoto: false,
+                    taber:true
+                })
+            }
+            
+        }
     },
-    
+
 })
