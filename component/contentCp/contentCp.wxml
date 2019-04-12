@@ -1,0 +1,26 @@
+<!--component/contentCp/content.wxml-->
+
+<view class='content' wx:for="{{datas}}" wx:index="index" wx:key="key">
+    <view bindtap='getContent' data-index='{{item.id}}' class='content-header'>
+        <text class="iconfont icon-shu"></text>
+        <text>{{item.txt[0].header}}</text>
+    </view>
+    <view class='content-con'>
+        <view bindtap='getContent' data-index='{{item.id}}' class='content-txt'>
+            <text>{{item.txt[0].cont}}</text>
+        </view>
+        <view class='content-inf'>
+            <text>{{item.txt[0].upTime}}</text>
+            <text bindtap='getContent' data-index='{{item.id}}' class='iconfont icon-pinglun'></text>
+            <button open-type="share" class='iconfont icon-zhuanfa'></button>
+        </view>
+    </view>
+    <!-- <view wx:if="{{ talk === index }}">
+        <view>
+            <view>content</view>
+        </view>
+        <view>
+            <input></input>
+        </view>
+    </view> -->
+</view>
