@@ -33,8 +33,7 @@ Component({
             }
         },
         getContent(msg) {
-            var index = msg.currentTarget.dataset['index'];
-            console.log(index)
+            var index = msg.currentTarget.dataset['index'];     
             wx.navigateTo({
                     url: '/pages/content/content?id=' + index,
                 })

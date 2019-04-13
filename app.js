@@ -2,7 +2,11 @@
 
 App({
     onLaunch: function() {
-
+        //初始化云端数据库
+        wx.cloud.init({
+            traceUser: true,
+            env: 'start-project-8582df'
+        })
         // 展示本地存储能力
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
@@ -33,13 +37,6 @@ App({
                 }
             }
         })
-    },
-    onLoad(){
-        wx.startPullDownRefresh({
-                success(msg) {
-                    wx.stopPullDownRefresh()
-                }
-            })
     },
     globalData: {
         userInfo: null

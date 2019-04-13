@@ -7,7 +7,7 @@
     <!-- 内容组件 -->
     <conten-cp wx:if="{{content}}" datas="{{datas}}"></conten-cp>
 </view>
-
+<loading wx:if="{{!loading}}">加载中</loading>
 <block>
     <help-cp wx:if="{{help}}"></help-cp>
 </block>

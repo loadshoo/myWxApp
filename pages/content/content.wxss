@@ -35,6 +35,10 @@ page{
     flex-flow: row wrap;
     justify-content: flex-start;
     margin: 20rpx 0;
+    width: 670rpx;
+}
+.content-cont text{
+    width: 670rpx;
 }
 .content-talkabout{
     font-size: 30rpx;

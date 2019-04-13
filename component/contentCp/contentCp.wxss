@@ -13,24 +13,27 @@
 
 .content-header {
     display: flex;
-    font-size: 35rpx;
+    font-size: 30rpx;
     color: #000;
-    flex-flow: row wrap;
-    align-items: center;
     justify-content: flex-start;
     padding: 0 10rpx;
 }
-
+.icon-shu{
+    font-size: 30rpx;
+    padding-top: 5rpx;
+}
 .content-header text {
     margin-right: 20rpx;
+    align-items: flex-start;
+    flex-flow: row wrap;
 }
-
 .content-con {
     display: flex;
     flex-flow: column wrap;
 }
 
 .content-txt {
+    font-size: 25rpx;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -38,9 +41,10 @@
     margin: 20rpx 10rpx 0 10rpx;
     max-height: 130rpx;
     overflow: hidden;
+    width: 650rpx;
 }
 
-.content-txt text {
+.content-txt view {
     display: -webkit-box;
     -webkit-box-orient:vertical;
     -webkit-line-clamp: 3;
@@ -56,6 +60,7 @@
 }
 
 .content-inf text {
+    font-size: 25rpx;
     margin-right: 80rpx;
 }
 

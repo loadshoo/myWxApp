@@ -6,7 +6,8 @@ Page({
      */
     data: {
         id:"",
-        datas:""
+        datas:"",
+        onloading:false
     },
 
     /**
@@ -17,11 +18,11 @@ Page({
         wx.cloud.init();
         const db = wx.cloud.database();
         const that = this;
-        db.collection("content").doc('5cb075ad8852e71926067b2c').get({
+        db.collection("index_datas").doc('5cb16b578852e71926082a96').get({
             success(msg) {
                 that.setData({
-                    datas: msg.data.content[options.id-1],
-                    
+                    datas: msg.data.datas[options.id-1],
+                    onloading:true
                 })
             },
             fail: console.error
