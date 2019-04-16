@@ -1,1 +1,64 @@
 /* component/helpCp/help.wxss */
+@import "/static/css/icon.wxss";
+
+page {
+    background-color: #fafafa;
+}
+
+.comment {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 20rpx;
+    background-color: #fff;
+}
+
+.comment-con {
+    padding: 20rpx 20rpx 10rpx 20rpx;
+}
+
+.comment-userInfo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid #929090;
+}
+
+.comment-img {
+    width: 60rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.comment-txt {
+    font-size: 25rpx;
+    padding: 10rpx 10rpx;
+}
+
+.feed {
+    /* display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between; */
+    margin: 20rpx;
+    padding: 20rpx 0;
+    background-color: #fff;
+}
+
+.feedBack {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30rpx;
+    margin: 0 20rpx 20rpx 20rpx;
+}
+
+.feedBack-txt textarea {
+    padding: 10rpx;
+    width: 650rpx;
+    display: flex;
+    font-size: 25rpx;
+    margin: 0 20rpx 20rpx 20rpx;
+    flex-flow: row wrap;
+    border: 1px solid #929090;
+}

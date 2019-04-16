@@ -3,7 +3,7 @@
     <view bindtap='remotoChange' class='header-left iconfont icon-caidan {{remoto==true?"remoto actived":""}}'></view>
     <view class='header-center'>
         <view class='{{changeColor?"actived":""}}' bindtap='selectCont'>全部</view>
-        <view class='{{changeColor?"":"actived"}}' bindtap='selectInfo'>推荐</view>
+        <view class='{{changeColor?"":"actived"}}' bindtap='selectInfo'>反馈</view>
     </view>
     <view bindtap="searchIcon" class='header-right iconfont icon-sousuo'></view>
 </view>

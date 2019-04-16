@@ -1,2 +1,19 @@
 <!--component/helpCp/help.wxml-->
-<view></view>
+<view class='comment'>
+    <view wx:for="{{feedBackTxt.data}}" wx:key="key" wx:item="item" class='comment-con'>
+        <view class='comment-userInfo'>
+            <image src='{{item.avatarUrl}}' class='comment-img' mode='widthFix'></image>
+            <text>{{item.nickName}}</text>
+        </view>
+        <view class='comment-txt'>{{item.feedTxt}}</view>
+    </view>
+</view>
+<view class='feed'>
+    <view class='feedBack'>
+        <text>说说你的建议</text>
+        <text class='iconfont icon-icon_sent' bindtap='feedSend'></text>
+    </view>
+    <view class='feedBack-txt'>
+        <textarea value='{{txt}}' placeholder='写反馈...' maxlength='-1' bindinput='feedBack'></textarea>
+    </view>
+</view>
