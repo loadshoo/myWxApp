@@ -9,5 +9,5 @@
 </view>
 <loading wx:if="{{!loading}}">加载中</loading>
 <block>
-    <help-cp wx:if="{{help}}"></help-cp>
+    <help-cp feedBackTxt="{{feedBackTxt}}" wx:if="{{help}}"></help-cp>
 </block>
