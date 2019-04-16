@@ -1,8 +1,8 @@
 <!--pages/meInfo/meInfo.wxml-->
 <block wx:if="{{login}}">
     <view class='conform'>
-        <image src="{{userinfo.avatarUrl}}" class='logout'></image>
-        <view>{{userinfo.nickName}} {{userinfo.gender==1?"先生":"女士"}}</view>
+        <image src="{{userInfo.avatarUrl}}" class='logout'></image>
+        <view>{{userInfo.nickName}} {{userInfo.gender==1?"先生":"女士"}}</view>
         <button bindtap="logout">退出登录</button>
     </view>
 </block>
@@ -11,7 +11,7 @@
     <view class='conform'>
         <image class='logout'></image>
         <view>
-            <button open-type="getUserInfo" bindtap='ftLogin'>login</button>
+            <button open-type="getUserInfo" bindgetuserinfo='ftLogin'>login</button>
         </view>
     </view>
 </block>
