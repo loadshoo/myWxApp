@@ -11,6 +11,21 @@
     <view class='content-talkabout'>
         <view>{{datas.talk}}</view>
     </view>
+    <view class='comment'>
+        <view wx:for="{{commentTxtAll.data}}" wx:item="item" wx:key="key" class='comment-content'>
+            <view class='comment-avatar'>
+                <image src="{{item.avatarUrl}}" mode='widthFix' class='avatar'></image>
+                <text class='nickName'>{{item.nickName}}</text>
+            </view>
+            <view  class='comment-commit'>
+                <text>{{item.commentTxt}}</text>
+            </view>
+        </view>
+        <view class='comment-bottom'>
+            <input placeholder='说说你的看法' class='comment-input' confirm-type="send" value="{{commentTxt}}" bindinput="onCommentTxt"></input>
+            <button bindtap='commentSend'>发送</button>
+        </view>
+    </view>
 </view>
 <view wx:else class='looading'>
     <loading>加载中</loading>

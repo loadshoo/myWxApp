@@ -11,7 +11,7 @@
         </view>
         <view class='content-inf'>
             <text>{{item.upTime}}</text>
-            <text bindtap='getContent' data-index='{{item.id}}' class='iconfont icon-pinglun'></text>
+            <text style='font-size:30rpx;color:#000;' bindtap='getContent' data-index='{{item.id}}' class='iconfont icon-pinglun'></text>
             <button open-type="share" class='iconfont icon-zhuanfa'></button>
         </view>
     </view>

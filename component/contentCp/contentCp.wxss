@@ -63,7 +63,9 @@
     font-size: 25rpx;
     margin-right: 80rpx;
 }
-
+.icon-pinglun {
+    font-size: 30rpx;
+}
 .content-inf button {
     margin-left: -10rpx;
     background-color: #fff;
