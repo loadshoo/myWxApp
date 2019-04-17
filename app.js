@@ -1,5 +1,6 @@
 //app.js
-
+wx.cloud.init();
+const db = wx.cloud.database('start-project-8582df');
 App({
     onLaunch: function() {
         //初始化云端数据库
@@ -11,35 +12,66 @@ App({
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
-        // 登录
-        wx.login({
-            success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            }
-        })
-        // 获取用户信息
-        wx.getSetting({
-            success: res => {
-                if (res.authSetting['scope.userInfo']) {
-                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-                    // wx.getUserInfo({
-                    //     success: res => {
-                    //         // 可以将 res 发送给后台解码出 unionId
-                    //         this.globalData.userInfo = res.userInfo
-
-                    //         // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-                    //         // 所以此处加入 callback 以防止这种情况
-                    //         if (this.userInfoReadyCallback) {
-                    //             this.userInfoReadyCallback(res)
-                    //         }
-                    //     }
-                    // })
-                }
-            }
-        })
     },
     globalData: {
         userInfo: null
     },
-    
+    //封装获取数据的collection.get方法
+    getData(name, method, data) {
+        return new Promise((reslove, reject) => {
+            db.collection(name)[method](data || {})
+                .get({
+                    success(res) {
+                        reslove(res)
+                    },
+                    fail(err) {
+                        reject(err)
+                    }
+                })
+        })
+    },
+    //封装collection.add方法
+    addData(name, data) {
+        return new Promise((reslove, reject) => {
+            db.collection(name)
+                .add({
+                    data: data || {},
+                    success(res) {
+                        reslove(res)
+                    },
+                    fail(err) {
+                        reject(err)
+                    }
+                })
+        })
+    },
+    //封装云函数
+    callFunction(name) {
+        return new Promise((reslove, reject) => {
+            wx.cloud.callFunction({
+                name: name,
+                success(res) {
+                    reslove(res)
+                },
+                fail(err) {
+                    reject(err)
+                }
+            })
+        })
+    },
+    //封装缓存方法
+    getStorage(key) {
+        return new Promise((reslove, reject) => {
+            wx.getStorage({
+                key: key,
+                success(res) {
+                    reslove(res)
+                },
+                fail(err) {
+                    reject(err)
+                }
+            })
+        })
+
+    }
 })

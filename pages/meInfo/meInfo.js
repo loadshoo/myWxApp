@@ -1,6 +1,6 @@
 // pages/meInfo/meInfo.js
+const app = getApp();
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -15,59 +15,60 @@ Page({
      */
     onLoad: function(options) {
         var that = this;
-        wx.getStorage({
-            key: 'isLogin',
-            success: function(res) {
+        app.getStorage("isLogin")
+            .then(res => {
                 that.setData({
-                    userInfo:res.data,
+                    userInfo: res.data,
                     login: true,
                 })
-            },
-            fail(res){
-                console.log(res)
-            }
-        })
+            })
+            .catch(res => {
+                console.error
+            })
+        // wx.getStorage({
+        //     key: 'isLogin',
+        //     success: function(res) {
+        //         that.setData({
+        //             userInfo: res.data,
+        //             login: true,
+        //         })
+        //     },
+        //     fail(res) {
+        //         console.log(res)
+        //     }
+        // })
     },
     //   未登录时点击登录
     ftLogin(e) {
         var that = this
         if (e.detail.errMsg === "getUserInfo:ok") {
-            //初始化云端数据库
-            wx.cloud.init;
             //调用login云函数
-            wx.cloud.callFunction({
-                name: "login",
-                success(res) {
+            app.callFunction("login")
+                .then(res => {
                     //获取用户唯一标识openID
                     let uuid = res.result.openid;
-                    const db = wx.cloud.database('start-project-8582df');
-                    //查询数据库中是否已保存用户数据
-                    db.collection('userInfo')
-                        .where({
-                            _openid: uuid
-                        }).get({
-                            success(msg) {
-                                //判断是否已保存过用户数据
-                                //大于0表示已存在，则不需要保存
-                                if (msg.data.length > 0) {
-                                    return
-                                } else {
-                                    //否则就添加用户数据到数据库
-                                    db.collection('userInfo').add({
-                                        data: {
-                                            avatarUrl: e.detail.userInfo.avatarUrl,
-                                            nickName: e.detail.userInfo.nickName
-                                        },
-                                        success(date) {
-
-                                        }
-                                    })
-                                }
-                            }
+                    return app.getData("userInfo", "where", {
+                        _openid: uuid
+                    })
+                })
+                //查询数据库中是否已保存用户数据
+                .then(msg => {
+                    //判断是否已保存过用户数据
+                    //大于0表示已存在，则不需要保存
+                    if (msg.data.length === 0) {
+                        return app.addData("userInfo", {
+                            avatarUrl: e.detail.userInfo.avatarUrl,
+                            nickName: e.detail.userInfo.nickName
                         })
 
-                }
-            })
+                    }
+                })
+                .then(data => {
+
+                })
+                .catch(err => {
+                    console.error
+                })
             wx.showToast({
                 title: '登录成功',
             });

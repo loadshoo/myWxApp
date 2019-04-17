@@ -1,4 +1,5 @@
 // pages/content/content.js
+const app = getApp()
 Page({
 
     /**
@@ -20,53 +21,84 @@ Page({
     //发送数据到数据库
     commentSend() {
         let that = this;
-        let getCommentTxt = this.data.commentTxt;
+        let getCommentTxt = that.data.commentTxt;
         //获取缓存，检查是否登录
-        wx.getStorage({
-            key: 'isLogin',
-            success: function(res) {
-                //初始化云数据库
-                wx.cloud.init;
-                const db = wx.cloud.database();
-                //讲评论数据添加到数据库中
-                db.collection("comments")
-                    .add({
-                        data: {
-                            id: that.data.id,
-                            commentTxt: getCommentTxt,
-                            avatarUrl: res.data.avatarUrl,
-                            nickName:res.data.nickName
-                        },
-                        success(res) {
-                            console.log(res._id)
-                            //根据id值进行判断评论的哪一个页面，然后进行渲染
-                            db.collection("comments")
-                                .where({
-                                    id: that.data.id,
-                                }).get({
-                                    success(msg) {
-                                        that.setData({
-                                            id: that.data.id,
-                                            commentTxtAll: msg,
-                                            commentTxt: "",
-                                            onloading: true
-                                        })
-                                    },
-                                    fail: console.error
-                                })
-                            wx.showToast({
-                                title: '发送成功',
-                            })
-                        }
-                    })
-            },
-            fail(res) {
-                wx.showToast({
-                    title: '请先登录',
-                    icon: "none"
+        app.getStorage("isLogin")
+            .then(res => {
+                return app.addData("comments", {
+                    id: that.data.id,
+                    commentTxt: getCommentTxt,
+                    avatarUrl: res.data.avatarUrl,
+                    nickName: res.data.nickName
                 })
-            }
-        })
+            })
+            .then(res => {
+                wx.showToast({
+                    title: '发送成功',
+                });
+                return app.getData("comments", "where", {
+                    id: that.data.id
+                })
+            })
+            .then(msg => {
+                that.setData({
+                    id: that.data.id,
+                    commentTxtAll: msg,
+                    commentTxt: "",
+                    onloading: true
+                })
+            })
+            .catch(res => {
+                if (res.errMsg === "getStorage:fail data not found"){
+                    wx.showToast({
+                        title: '请先登录',
+                    })
+                }
+            })
+        // wx.getStorage({
+        //     key: 'isLogin',
+        //     success: function(res) {
+        //         //初始化云数据库
+        //         wx.cloud.init;
+        //         const db = wx.cloud.database();
+        //         //讲评论数据添加到数据库中
+        //         db.collection("comments")
+        //             .add({
+        //                 data: {
+        //                     id: that.data.id,
+        //                     commentTxt: getCommentTxt,
+        //                     avatarUrl: res.data.avatarUrl,
+        //                     nickName: res.data.nickName
+        //                 },
+        //                 success(res) {
+        //                     //根据id值进行判断评论的哪一个页面，然后进行渲染
+        //                     db.collection("comments")
+        //                         .where({
+        //                             id: that.data.id,
+        //                         }).get({
+        //                             success(msg) {
+        //                                 that.setData({
+        //                                     id: that.data.id,
+        //                                     commentTxtAll: msg,
+        //                                     commentTxt: "",
+        //                                     onloading: true
+        //                                 })
+        //                             },
+        //                             fail: console.error
+        //                         });
+        //                     wx.showToast({
+        //                         title: '发送成功',
+        //                     })
+        //                 }
+        //             })
+        //     },
+        //     fail(res) {
+        //         wx.showToast({
+        //             title: '请先登录',
+        //             icon: "none"
+        //         })
+        //     }
+        // })
     },
     /**
      * 生命周期函数--监听页面加载
