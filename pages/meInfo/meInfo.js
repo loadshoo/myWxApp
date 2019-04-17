@@ -15,6 +15,7 @@ Page({
      */
     onLoad: function(options) {
         var that = this;
+        //
         app.getStorage("isLogin")
             .then(res => {
                 that.setData({
@@ -25,18 +26,7 @@ Page({
             .catch(res => {
                 console.error
             })
-        // wx.getStorage({
-        //     key: 'isLogin',
-        //     success: function(res) {
-        //         that.setData({
-        //             userInfo: res.data,
-        //             login: true,
-        //         })
-        //     },
-        //     fail(res) {
-        //         console.log(res)
-        //     }
-        // })
+       
     },
     //   未登录时点击登录
     ftLogin(e) {
